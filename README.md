@@ -1,0 +1,1 @@
+##This contains all current aliases I use with zsh##
