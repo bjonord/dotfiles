@@ -1,3 +1,7 @@
+# set 256color term
+export TERM=xterm-256color
+
+
 # superglobs
 setopt extendedglob
 unsetopt caseglob
