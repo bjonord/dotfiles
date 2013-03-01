@@ -7,3 +7,5 @@ source "${zshd}"
 done
 }
 _source_zshd
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
