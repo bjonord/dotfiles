@@ -3,3 +3,5 @@ local_aliases.zsh
 \#*
 *\#
 .\#*
+scala.zsh
+sbt.zsh
