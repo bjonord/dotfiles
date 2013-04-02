@@ -8,6 +8,6 @@ alias 'gacm=gaA; gcm'
 alias 'gstat=git status'
 alias 'gdiffc=git diff --cached'
 alias 'gdiff=git diff'
-alias 'glg=git log --graph'
+alias 'glg=git log --graph --pretty=oneline --abbrev-commit'
 
 
