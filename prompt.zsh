@@ -46,5 +46,7 @@ REPORTTIME=10
 setopt interactivecomments # pound sign in interactive prompt
 
 # A nicer prompt.
-PS1='[%T] %n:%~:> '
+PS1='[%T] %n:/%3~:> '
 
+# Old version with a full path.
+# PS1='[%T] %n:%~:> '
