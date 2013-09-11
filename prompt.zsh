@@ -9,7 +9,7 @@ unsetopt caseglob
 # Bigger history file.
 HISTFILE=~/.zhistory
 HISTSIZE=SAVEHIST=10000
-setopt incappendhistory 
+setopt incappendhistory
 setopt sharehistory
 setopt extendedhistory
 
@@ -37,7 +37,7 @@ fi
 # Alias for the most commonly used ls.
 alias ll='ls -l'
 alias la='ls -a'
-alias lal='ls -al'
+alias lal='ls -ahl'
 
 # Reports CPU usage for processes taking longer than 10 seconds to execute.
 REPORTTIME=10
