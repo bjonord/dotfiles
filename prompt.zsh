@@ -1,7 +1,6 @@
 # set 256color term
 export TERM=xterm-256color
 
-
 # superglobs
 setopt extendedglob
 unsetopt caseglob
@@ -33,11 +32,6 @@ if [[ -x "`whence -p dircolors`" ]]; then
 else
   alias ls='ls -F'
 fi
-
-# Alias for the most commonly used ls.
-alias ll='ls -l'
-alias la='ls -a'
-alias lal='ls -ahl'
 
 # Reports CPU usage for processes taking longer than 10 seconds to execute.
 REPORTTIME=10
