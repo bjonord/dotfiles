@@ -1,2 +1,2 @@
 # Selecta git combo
-alias sgcob="selecta_gbranch"
+alias sgcob="sel_gbranch"
