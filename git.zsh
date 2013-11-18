@@ -10,4 +10,4 @@ alias 'gstat=git status'
 alias 'gdiffc=git diff --cached'
 alias 'gdiff=git diff'
 alias "glg=git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
-alias "gitrma=git rm `git status | grep deleted | awk '{print $3}'`"
+alias gitrma="~/.zsh.d/functions/git_rm_all.zsh"
