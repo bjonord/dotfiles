@@ -2,5 +2,6 @@
 /zeus.json
 .\#*
 \#*\#
+.idea/*
 .idea
 TAGS
