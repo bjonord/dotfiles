@@ -1,0 +1,3 @@
+keycode 66 = Control_L
+clear Lock
+add control = Control_L
