@@ -1,0 +1,2 @@
+source ~/.mutt-imap-conf
+set editor=vim

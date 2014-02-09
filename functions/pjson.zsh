@@ -13,3 +13,4 @@ function pjson {
         done
     fi
 }
+pjson
