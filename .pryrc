@@ -4,7 +4,7 @@ Pry.commands.alias_command 'wh', 'whereami'
 Pry.commands.alias_command 'pl', 'play -l'
 Pry.commands.alias_command 'ht', 'hist -T'
 Pry.commands.alias_command 'hr', 'hist -r'
-Pry.config.editor = proc { |file, line| "ec +#{line} #{file}"}
+Pry.config.editor = proc { |file, line| "emacs +#{line} #{file}"}
 # == Pry-Nav - Using pry as a debugger ==
 Pry.commands.alias_command 'c', 'continue' rescue nil
 Pry.commands.alias_command 's', 'step' rescue nil
