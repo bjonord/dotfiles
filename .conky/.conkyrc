@@ -1,6 +1,6 @@
 background no
 use_xft yes
-#xftfont Bitstream Vera Sans Mono:size=9
+xftfont Droid Sans Mono:size=10
 xftalpha 0.8
 update_interval 1.0
 total_run_times 0
@@ -35,39 +35,44 @@ mpd_host localhost
 alignment top_left
 #min_width 280
 #max_width 280
- 
+
 TEXT
 ${font Droid Sans Mono:style=Bold:size=16}${color lightgrey}${alignc}${time %a %d. %b %k:%M}
 $font$color${alignc} ${tztime ETC/UTC  %H:%M} UTC
 ${color lightgrey}$stippled_hr
 ${color lightgrey}Processes:$color $processes  ${color grey}Running:$color $running_processes ${color lightgrey}Up:$color $uptime_short
- 
+
 ${color lightgrey}CPU: $cpu% ${cpubar}
 ${color}Name                  PID     CPU%    MEM%
-${font Droid Sans Mono:size=8}${color lightgrey}${top name 1}     ${top pid 1}  ${top cpu 1}  ${top mem 1}
-${color lightgrey}${top name 2}     ${top pid 2}  ${top cpu 2}  ${top mem 2}
-${color lightgrey}${top name 3}     ${top pid 3}  ${top cpu 3}  ${top mem 3}
+${font Droid Sans Mono:size=8}${color lightgrey}${top name 1}        ${top_mem pid 1}    ${top_mem cpu 1}   ${top_mem mem 1}
+${color lightgrey}${top name 2}        ${top_mem pid 2}    ${top_mem cpu 2}   ${top_mem mem 2}
+${color lightgrey}${top name 3}        ${top_mem pid 3}    ${top_mem cpu 3}   ${top_mem mem 3}
 ${cpugraph 48,345 009bf9 ffffff}
- 
+$font${color lightgrey}$stippled_hr
 $font${color lightgrey}RAM: $mem/$memmax - $memperc% ${membar}
 ${color lightgrey}Swap: $swap/$swapmax - $swapperc% ${swapbar}
 ${color}Name                  PID     CPU%    MEM%
-${font Droid Sans Mono:size=8}${color lightgrey}${top_mem name 1}     ${top_mem pid 1}  ${top_mem cpu 1}  ${top_mem mem 1}
-${color lightgrey}${top_mem name 2}     ${top_mem pid 2}  ${top_mem cpu 2}  ${top_mem mem 2}
-${color lightgrey}${top_mem name 3}     ${top_mem pid 3}  ${top_mem cpu 3}  ${top_mem mem 3}
+${font Droid Sans Mono:size=8}${color lightgrey}${top_mem name 1}        ${top_mem pid 1}    ${top_mem cpu 1}   ${top_mem mem 1}
+${color lightgrey}${top_mem name 2}        ${top_mem pid 2}    ${top_mem cpu 2}   ${top_mem mem 2}
+${color lightgrey}${top_mem name 3}        ${top_mem pid 3}    ${top_mem cpu 3}   ${top_mem mem 3}
 ${memgraph 48,345 009bf9 ffffff}
- 
 $font${color lightgrey}Connections${alignr}${color lightgrey}In:$color ${tcp_portmon 1 32767 count}  ${color lightgrey}Out:$color ${tcp_portmon 32768 61000 count}   ${color lightgrey}ALL:$color ${tcp_portmon 1 65535 count}
 ${color lightgrey}$stippled_hr
 ${color lightgrey}E - Down:$color ${downspeed eth0} ${color lightgrey} ${offset 20}Up:$color ${upspeed eth0}
 ${color lightgrey}W - Down:$color ${downspeed wlan0} ${color lightgrey} ${offset 20}Up:$color ${upspeed wlan0}
 
-${color lightgrey}eth0:$color ${addr eth0}
-${color lightgrey}wlan0:$color ${addr wlan0}
-${color lightgrey}external:$color ${execi 7200 ~/.conky/pub_ip.sh}
+${color lightgrey}eth0:    $color ${addr eth0}
+${color lightgrey}wlan0:   $color ${addr wlan0}
+${color lightgrey}external:$color ${execi 3600 ~/.conky/pub_ip.sh}
+${color lightgrey}$stippled_hr
+${color lightgrey}Weather forecast:
+$color${execi 600 ~/.dotfiles/.conky/weather.rb}
 $font${color lightgrey}$stippled_hr
 ${color lightgrey}hda:  ${fs_used /}/${fs_size /}  ${fs_bar /}
- 
+${color lightgrey}$stippled_hr
+${color lightgrey}Tretti Resque:$color
+$color${execi 5 ~/.dotfiles/.conky/resque.rb}
+
 #${color lightgrey}S H O R T C U T    K E Y S
 #$font${color lightgrey}$stippled_hr
 #Alt+F2$alignr Run Dialog
