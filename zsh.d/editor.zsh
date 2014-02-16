@@ -5,5 +5,6 @@ EDITOR="vim" # default editor emacs.
 VISUAL="emacsclient -c" # as above
 
 # terminal editor
-alias e="emacsclient -t -a emacs"
+alias e="ec -nw"
+alias eterm="emacsclient -t -a emacs"
 alias E="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
