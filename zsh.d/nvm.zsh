@@ -1,0 +1,1 @@
+[ -s "/home/bjoska/.nvm/nvm.sh" ] && . "/home/bjoska/.nvm/nvm.sh" # This loads nvm
