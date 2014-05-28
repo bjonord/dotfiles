@@ -1,3 +1,4 @@
+#! /bin/bash
 # Function used to print pretty json using pythons Json.tool. 
 function pjson {
     if [ $# -gt 0 ];
@@ -13,4 +14,3 @@ function pjson {
         done
     fi
 }
-pjson
