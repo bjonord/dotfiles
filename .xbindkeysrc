@@ -37,13 +37,13 @@
 #keystate_capslock = enable
 #keystate_scrolllock= enable
 
-"pactl set-sink-volume 0 -- +2%"
+"amixer -c 1 sset Master 5+"
   XF86AudioRaiseVolume
 
-"pactl set-sink-volume 0 -- -2%"
+"amixer -c 1 sset Master 5-"
   XF86AudioLowerVolume
 
-"pactl set-sink-mute 0 toggle"
+"amixer -D pulse set Master 1+ togglemute"
   XF86AudioMute
 
 # Examples of commands:
