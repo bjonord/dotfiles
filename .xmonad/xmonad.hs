@@ -49,7 +49,6 @@ myLayoutHook = onWorkspaces ["1:www","2:term","3:emacs","4:email","5","6","7:Mus
 -- use xprop | grep WM_CLASS to find the className
 myManageHook = composeAll
    [ className =? "Firefox" --> doShift "1:www"
-   , className =? "trayer" --> doShift "9"
    , className =? "trayer" --> doFloat
    , className =? "Emacs" --> doShift "3:emacs"
    , resource =? "desktop_window" --> doIgnore
@@ -63,6 +62,9 @@ myManageHook = composeAll
 
 main :: IO ()
 main = do
+    -- this is here to kill nemo file manager on a reload, as it blocks xmobar because of layering.
+    spawn "killall nemo"
+    --
     xmproc <- spawnPipe "/usr/bin/xmobar"
     xmonad $ defaultConfig
      { terminal = "terminator"
