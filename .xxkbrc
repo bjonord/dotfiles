@@ -1,0 +1,7 @@
+XXkb.mainwindow.type: trayer
+XXkb.mainwindow.label.enable
+XXkb.mainwindow.in_tray: true
+XXkb.mainwindow.enable: yes
+XXkb.mainwindow.geometry: 20x20+0+0
+XXkb.controls.mainwindow_delete: no
+XXkb.button.enable: no
