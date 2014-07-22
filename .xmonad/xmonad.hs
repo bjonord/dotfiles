@@ -83,5 +83,5 @@ main = do
      [ ((controlMask, xK_Print), spawn "sleep 1; scrot")
      , ((mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock")
      , ((mod4Mask, xK_e), spawn "nemo")
-     , ((mod4Mask .|. shiftMask, xK_space), spawn "/home/bjoska/bin/keyboard-switcher.sh")
+     , ((mod4Mask .|. shiftMask, xK_space), spawn "keyboard-switcher")
      ]
