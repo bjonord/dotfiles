@@ -25,5 +25,7 @@ There is currently no little script to 'install' all of this without any hassle.
 - tests? Would be nice to have if possible
 
 ##Credits:
-@zph - http://www.civet.ws/2013/02/getting-started-configuring-bashzsh/
-@zph - For the shortcuts used with Pry
+- @zph - http://www.civet.ws/2013/02/getting-started-configuring-bashzsh/
+- @zph - For the shortcuts used with Pry
+- @piisalie - Some xmonad configurations
+- @plexus - Some xmonad configurations
