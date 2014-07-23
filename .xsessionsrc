@@ -7,8 +7,7 @@ fi
 xbindkeys &
 cinnamon-sound-applet &
 xfce4-power-manager &
-
-xscreensaver -no-splash &
+blueman-applet &
 
 xsetroot -solid rgb:5/5/5
 

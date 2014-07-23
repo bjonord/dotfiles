@@ -83,7 +83,7 @@ main = do
      }
      `additionalKeys`
      [ ((controlMask, xK_Print), spawn "sleep 1; scrot")
-     , ((mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock")
+     , ((mod4Mask .|. shiftMask, xK_z), spawn "cinnamon-screensaver-command -l")
      , ((mod4Mask, xK_e), spawn "nemo")
      , ((mod4Mask .|. shiftMask, xK_space), spawn "keyboard-switcher")
      ]
