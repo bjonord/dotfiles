@@ -70,7 +70,7 @@ main = do
      { terminal = "terminator"
      , modMask = mod4Mask
      , borderWidth = 1
-     , focusedBorderColor = "#EEE8D5"
+     , focusedBorderColor = "#FF7F50"
      , focusFollowsMouse = False
      , workspaces = ["1:www","2:term","3:emacs","4:email","5","6","7:Music","8:Game","9","0","-:selenium","=:tmp"]
      , manageHook = manageDocks <+> myManageHook <+> manageHook defaultConfig
