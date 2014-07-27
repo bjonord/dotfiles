@@ -51,6 +51,7 @@ myManageHook = composeAll
    [ className =? "Firefox" --> doShift "1:www"
    , className =? "trayer" --> doFloat
    , className =? "Emacs" --> doShift "3:emacs"
+   , className =? "Gimp" --> doFloat
    , resource =? "desktop_window" --> doIgnore
    , className =? "Xmessage" --> doFloat
    , className =? "Steam" --> doShift "8:Game"
