@@ -1,10 +1,13 @@
-Config { font = "xft:Liberation Mono-10"
+Config { font = "xft:Source Code Pro-10"
        , bgColor = "black"
        , fgColor = "grey"
        , position = Top
        , lowerOnStart = True
        , allDesktops = True
        , commands = [ Run Weather "ESMS" [ "-t","<station>: <tempC>C"
+                                         , "-L","18","-H","35"
+                                         , "--normal","green","--high","red","--low","lightblue"] 36000
+                    , Run Weather "LHBP" [ "-t","<station>: <tempC>C"
                                          , "-L","18","-H","35"
                                          , "--normal","green","--high","red","--low","lightblue"] 36000
                     , Run Network "eth0" ["-L","0","-H","32","--normal","green","--high","red"] 10
@@ -22,5 +25,5 @@ Config { font = "xft:Liberation Mono-10"
                     ]
         , sepChar = "%"
         , alignSep = "}{"
-        , template = " %cpu% | %memory% * %swap% | %eth0% - %wlan0% | %StdinReader% }{ %ESMS% | %uptime% | %battery% | <fc=#ee9a00>%date%</fc>"
+        , template = " %cpu% | %memory% * %swap% | %wlan0% | %StdinReader% }{ %ESMS% | %LHBP% | %uptime% | %battery% | <fc=#ee9a00>%date%</fc>"
         }

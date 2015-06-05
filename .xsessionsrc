@@ -8,6 +8,7 @@ xbindkeys &
 cinnamon-sound-applet &
 xfce4-power-manager &
 blueman-applet &
+shutter &
 
 xsetroot -solid rgb:5/5/5
 

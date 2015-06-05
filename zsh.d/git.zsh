@@ -5,10 +5,11 @@ alias 'gaA=git add -A'
 alias 'gap=git add -p'
 alias 'gcop=git checkout -p'
 alias 'gco=git checkout'
+alias 'gcoh=git checkout HEAD --'
 alias 'gacm=gaA; gcm'
 alias 'gstat=git status --short --branch'
-alias 'gdiffc=git diff --cached'
-alias 'gdiff=git diff'
+alias 'gdiffc=git diff --cached --patience'
+alias 'gdiff=git diff --patience'
 alias 'gpr=git pull --rebase'
 alias "glg=git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias gitrma="sh -c 'git ls-files --deleted | xargs -r git rm'"
