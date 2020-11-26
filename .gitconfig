@@ -1,9 +1,12 @@
 [user]
-name = Björn Skarner
-email = bjorn@skarner.eu
+name = Björn Nordstrand
+email = bjorn.nordstrand@teamtailor.com
+
+[commit]
+template = ~/.gitconfig-message
 
 [color]
-ui = auto
+	ui = false
 
 [alias]
 oneline = log --pretty=oneline
@@ -18,12 +21,18 @@ short = log --pretty=format:\"%h %ar [%an] %s\"
 
 [core]
 editor = vi
+attributesfile = ~/.gitattributes
+	excludesFile = ~/.gitignore
+	pager = diff-so-fancy | less --tabs=4 -RFX
 
 [push]
 default = simple
 
-#[include]
-#path = .gitsecrets
+[pull]
+rebase = true
+
+[rebase]
+autoStash = true
 
 [diff]
 renames = copies
@@ -39,3 +48,18 @@ enabled = true # Enable the recording of resolved conflicts, so that identical h
 stat = true # Always show a diffstat at the end of a merge
 conflictstyle = diff3
 defaultToUpstream = true
+[merge "merge-structure-sql"]
+	name = Rails structure.sql merge driver
+	driver = git-merge-structure-sql %A %O %B
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse

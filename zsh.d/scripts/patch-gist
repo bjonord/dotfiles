@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -o errexit
+
+set_level=-1
+file_name="$(date +'%Y-%m-%d-%T')-gist.patch"
+
+if [ $1 == "master" ] || [ $1 == "main" ]; then
+  set_level=""
+fi
+
+git format-patch ${set_level} $1 --stdout > $file_name
+hub gist create $file_name
+rm $file_name

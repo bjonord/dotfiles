@@ -1,4 +1,5 @@
-#!/bin/zsh To ensure that the caps setting lives through suspends and
+#!/bin/zsh 
+# To ensure that the caps setting lives through suspends and
 # shut downs, changes were made in dconf editor.
 # http://askubuntu.com/questions/410499/make-setxkbmap-preferences-being-set-at-startup
 
