@@ -14,6 +14,7 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 eval "$(rbenv init -)"
 
 PATH="$PATH:$HOME/bin"
+PATH="$PATH:$HOME/zsh-bin"
 PATH="$PATH:$HOME/.cask/bin"
 PATH="$PATH:$HOME/.cargo/env"
 
