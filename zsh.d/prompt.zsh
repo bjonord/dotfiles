@@ -32,12 +32,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd'
 
 # Colors for ls
-if [[ -x "`whence -p dircolors`" ]]; then
-  eval `dircolors`
-  alias ls='ls -F --color=auto'
-else
-  alias ls='ls -F'
-fi
+# Make sure to install exa instead see rust-nix-util-alias.zsh.
 
 # Reports CPU usage for processes taking longer than 10 seconds to execute.
 REPORTTIME=10

@@ -6,7 +6,7 @@ email = bjorn.nordstrand@teamtailor.com
 template = ~/.gitconfig-message
 
 [color]
-	ui = false
+ui = false
 
 [alias]
 oneline = log --pretty=oneline
@@ -18,12 +18,13 @@ tree = log --graph --oneline --all
 stashbase = !git stash && git rebase $1 && git stash apply
 atelog = !git log --pretty=\"format:%at %H\" | sort | sed \"s/.* //\" | git log --stdin
 short = log --pretty=format:\"%h %ar [%an] %s\"
+cleaner = !git symbolic-ref --short HEAD | xargs git branch --merged | egrep -v '^\\s*\\*?\\s*(master|main)$' | xargs git branch -d
 
 [core]
 editor = vi
 attributesfile = ~/.gitattributes
-	excludesFile = ~/.gitignore
-	pager = diff-so-fancy | less --tabs=4 -RFX
+excludesFile = ~/.gitignore
+pager = diff-so-fancy | less --tabs=4 -RFX
 
 [push]
 default = simple
@@ -49,17 +50,17 @@ stat = true # Always show a diffstat at the end of a merge
 conflictstyle = diff3
 defaultToUpstream = true
 [merge "merge-structure-sql"]
-	name = Rails structure.sql merge driver
-	driver = git-merge-structure-sql %A %O %B
+name = Rails structure.sql merge driver
+driver = git-merge-structure-sql %A %O %B
 [color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
+oldNormal = red bold
+oldHighlight = red bold 52
+newNormal = green bold
+newHighlight = green bold 22
 [color "diff"]
-	meta = 11
-	frag = magenta bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+meta = 11
+frag = magenta bold
+commit = yellow bold
+old = red bold
+new = green bold
+whitespace = red reverse
