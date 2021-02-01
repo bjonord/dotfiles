@@ -6,10 +6,9 @@ alias 'gap=git add -p'
 alias 'gcop=git checkout -p'
 alias 'gco=git checkout'
 alias 'gcom=git mainco'
-function grepco2 {
+function grepco {
     git branch | grep $1 | head -n1 | awk '{print $1}' | xargs git checkout
 }
-alias grepco=grepco2
 
 # alias 'grepco=git branch | grep $1 | xargs git checkout'
 alias 'gcoh=git checkout HEAD --'
