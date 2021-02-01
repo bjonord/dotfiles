@@ -6,6 +6,9 @@ set smartindent
 set syntax=on
 set relativenumber
 set ruler
+set clipboard=unnamed
+set clipboard=unnamedplus
+set list
 
 filetype plugin indent on
 let mapleader = " "

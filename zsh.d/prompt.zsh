@@ -7,10 +7,16 @@ unsetopt caseglob
 
 # Bigger history file.
 HISTFILE=~/.zhistory
-HISTSIZE=SAVEHIST=10000
-setopt incappendhistory
-setopt sharehistory
-setopt extendedhistory
+HISTSIZE=50000
+SAVEHIST=20000
+## History command configuration
+setopt extended_history       # record timestamp of command in HISTFILE
+setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt hist_ignore_dups       # ignore duplicated commands history list
+setopt hist_ignore_space      # ignore commands that start with space
+setopt hist_verify            # show command with history expansion to user before running it
+setopt inc_append_history     # add commands to HISTFILE in order of execution
+setopt share_history          # share command history data
 
 # This provides a more extensive tab completion.
 autoload -U compinit
@@ -26,12 +32,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd'
 
 # Colors for ls
-if [[ -x "`whence -p dircolors`" ]]; then
-  eval `dircolors`
-  alias ls='ls -F --color=auto'
-else
-  alias ls='ls -F'
-fi
+# Make sure to install exa instead see rust-nix-util-alias.zsh.
 
 # Reports CPU usage for processes taking longer than 10 seconds to execute.
 REPORTTIME=10

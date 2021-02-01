@@ -1,1 +1,0 @@
-alias activate-bluetooh-speakers='pactl load-module module-bluetooth-discover'

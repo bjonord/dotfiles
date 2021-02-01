@@ -1,3 +1,4 @@
+.DS_Store
 local_aliases.zsh
 \#*\#
 \#*
@@ -5,3 +6,5 @@ local_aliases.zsh
 .\#*
 scala.zsh
 sbt.zsh
+.tern-port
+locals/

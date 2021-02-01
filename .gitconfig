@@ -1,41 +1,94 @@
 [user]
-name = Björn Skarner
-email = bjorn@skarner.eu
+	name = Björn Nordstrand
+	email = bjorn.nordstrand@teamtailor.com
+
+[commit]
+	template = ~/.gitconfig-message
 
 [color]
-ui = auto
+	ui = false
 
 [alias]
-oneline = log --pretty=oneline
-stat = log --stat
-s = status -s
-co = checkout
-contributors = shortlog -n -s --no-merges
-tree = log --graph --oneline --all
-stashbase = !git stash && git rebase $1 && git stash apply
-atelog = !git log --pretty=\"format:%at %H\" | sort | sed \"s/.* //\" | git log --stdin
-short = log --pretty=format:\"%h %ar [%an] %s\"
+	oneline = log --pretty=oneline
+	stat = log --stat
+	s = status -s
+	co = checkout
+	contributors = shortlog -n -s --no-merges
+	tree = log --graph --oneline --all
+	stashbase = !git stash && git rebase $1 && git stash apply
+	atelog = !git log --pretty=\"format:%at %H\" | sort | sed \"s/.* //\" | git log --stdin
+	short = log --pretty=format:\"%h %ar [%an] %s\"
+	cleaner = !git symbolic-ref --short HEAD | xargs git branch --merged | egrep -v '^\\s*\\*?\\s*(master|main)$' | xargs git branch -d
+
+	#####
+	# New commands 2021-02-01
+	#####
+# Get the current branch name (not so useful in itself, but used in
+# other aliases)
+	branch-name = "!git rev-parse --abbrev-ref HEAD"
+# Get default branch
+	default-branch = "!git branch | grep -oE 'main|master'"
+	mainco = "!git co $(git default-branch)"
+# Push the current branch to the remote "origin", and set it to track
+# the upstream branch
+	publish = "!git push -u origin $(git branch-name)"
+# Delete the remote version of the current branch
+	unpublish = "!git push origin :$(git branch-name)"
+# Delete a branch and recreate it from master — useful if you have, say,
+# a development branch and a master branch and they could conceivably go
+# out of sync
+	recreate = "!f() { [[ -n $@ ]] && git checkout \"$@\" && git checkout $(git default-branch) && git branch -D \"$@\" && git checkout -b \"$@\"; }; f"
+# Unstage any files that have been added to the staging area
+	unstage = reset HEAD
+# Show changes that have been staged
+	diffc = diff --cached
+# Checkout our version of a file and add it
+	ours = "!f() { git checkout --ours $@ && git add $@; }; f"
+# Checkout their version of a file and add it
+	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
+
 
 [core]
-editor = vi
+	editor = vi
+	attributesfile = ~/.gitattributes
+	excludesFile = ~/.gitignore
+	pager = diff-so-fancy | less --tabs=4 -RFX
 
 [push]
-default = simple
+	default = simple
 
-#[include]
-#path = .gitsecrets
+[pull]
+	rebase = true
+
+[rebase]
+	autoStash = true
 
 [diff]
-renames = copies
-mnemonicprefix = true # Use mnemonic prefixes (index, work tree, commit, object) instead of the standard a and b notation.
+	renames = copies
+	mnemonicprefix = true # Use mnemonic prefixes (index, work tree, commit, object) instead of the standard a and b notation.
 
 [branch]
-autosetupmerge = true # When branching off a remote branch, automatically let the local branch track the remote branch.
+	autosetupmerge = true # When branching off a remote branch, automatically let the local branch track the remote branch.
 
 [rerere]
-enabled = true # Enable the recording of resolved conflicts, so that identical hunks can be resolved automatically later on.
+	enabled = true # Enable the recording of resolved conflicts, so that identical hunks can be resolved automatically later on.
 
 [merge]
-stat = true # Always show a diffstat at the end of a merge
-conflictstyle = diff3
-defaultToUpstream = true
+	stat = true # Always show a diffstat at the end of a merge
+	conflictstyle = diff3
+	defaultToUpstream = true
+[merge "merge-structure-sql"]
+	name = Rails structure.sql merge driver
+	driver = git-merge-structure-sql %A %O %B
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse

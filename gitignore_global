@@ -5,3 +5,9 @@
 .idea/*
 .idea
 TAGS
+\.tern-port
+jsconfig.json
+.DS_Store
+.kitchen
+mysql_good_queries.org
+.vscode
