@@ -19,6 +19,7 @@
 	atelog = !git log --pretty=\"format:%at %H\" | sort | sed \"s/.* //\" | git log --stdin
 	short = log --pretty=format:\"%h %ar [%an] %s\"
 	cleaner = !git symbolic-ref --short HEAD | xargs git branch --merged | egrep -v '^\\s*\\*?\\s*(master|main)$' | xargs git branch -d
+	purge-branches = !git_purge_empty_branches.sh
 
 	#####
 	# New commands 2021-02-01
@@ -29,6 +30,8 @@
 # Get default branch
 	default-branch = "!git branch | grep -oE 'main|master'"
 	mainco = "!git co $(git default-branch)"
+	mainpo = "!git pull origin $(git default-branch)"
+	rebma = "!git rebase $(git default-branch)"
 # Push the current branch to the remote "origin", and set it to track
 # the upstream branch
 	publish = "!git push -u origin $(git branch-name)"

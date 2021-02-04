@@ -9,10 +9,10 @@ fi
 
 git fetch --all --prune
 
-git checkout master > /dev/null
+git mainco > /dev/null
 
-for branch in $(git branch | cut -c 3- | egrep -v '^(master|deployment)$'); do
-  if [[ ! $(git cherry origin/master $branch | grep '^+') ]]; then
+for branch in $(git branch | cut -c 3- | egrep -v '^(master|main)$'); do
+  if [[ ! $(git cherry origin/$(git default-branch) $branch | grep '^+') ]]; then
     git branch -D $branch
 
     if git branch -r | grep "origin/$branch\$"; then
