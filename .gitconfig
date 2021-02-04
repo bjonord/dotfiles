@@ -1,6 +1,6 @@
 [user]
 	name = Björn Nordstrand
-	email = bjorn.nordstrand@teamtailor.com
+	email = bjorn@def-end.se
 
 [commit]
 	template = ~/.gitconfig-message
