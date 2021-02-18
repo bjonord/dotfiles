@@ -32,6 +32,7 @@
 	mainco = "!git co $(git default-branch)"
 	mainpo = "!git pull origin $(git default-branch)"
 	rebma = "!git rebase $(git default-branch)"
+  feorigin = "!git fetch origin"
 # Push the current branch to the remote "origin", and set it to track
 # the upstream branch
 	publish = "!git push -u origin $(git branch-name)"

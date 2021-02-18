@@ -4,12 +4,25 @@ alias 'gcm=git commit -m'
 alias 'gaA=git add -A'
 alias 'gap=git add -p'
 alias 'gcop=git checkout -p'
-alias 'gco=git checkout'
+alias 'gco=fgco'
 alias 'gcom=git mainco'
 alias 'gpom=git mainpo'
 alias 'grem=git rebma'
+alias 'gfor=git feorigin'
+alias 'gco-=gco -'
+
 function grepco {
     git branch | grep $1 | head -n1 | awk '{print $1}' | xargs git checkout
+}
+
+function fgco {
+ if [ -z $1 ]; then
+   git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git checkout
+ elif [ $1=="-" ]; then
+   git checkout -
+ elif [ $1=="m" ]; then
+   git mainco
+ fi
 }
 
 # alias 'grepco=git branch | grep $1 | xargs git checkout'
