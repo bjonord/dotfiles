@@ -1,1 +1,1 @@
-alias ec="emacsclient -cnqua ''"
+alias ec="emacsclient -cna ''"
