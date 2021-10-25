@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# https://aws.amazon.com/premiumsupport/knowledge-center/opensearch-rebalance-uneven-shards/
+# https://stackoverflow.com/c/teamtailor/questions/385
+
+set -o errexit
+
+if [ $1 == "allocation" ] || [ $1 == "all" ]; then
+  echo ""
+  echo "##################"
+  echo "### Allocation ###"
+  curl -XGET "${ES_Endpoint}_cat/allocation?v"
+fi
+
+if [ $1 == "shards" ] || [ $1 == "all" ]; then
+  echo ""
+  echo "##############"
+  echo "### Shards ###"
+  curl -XGET "${ES_Endpoint}_cat/shards?v"
+fi
+
+if [ $1 == "indices" ] || [ $1 == "all" ]; then
+  echo ""
+  echo "###############"
+  echo "### Indices ###"
+  curl -XGET "${ES_Endpoint}_cat/indices?v"
+fi
+
+if [ $1 == "cpu" ] || [ $1 == "all" ]; then
+  echo ""
+  echo "###########"
+  echo "### CPU ###"
+  curl -XGET "${ES_Endpoint}_cat/nodes?v&s=cpu:desc"
+fi
+
+if [ $1 == "health" ] || [ $1 == "all" ]; then
+  echo ""
+  echo "##############"
+  echo "### Health ###"
+  curl -XGET "${ES_Endpoint}_cluster/health"
+fi
