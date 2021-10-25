@@ -1,3 +1,6 @@
+ulimit -Sn 64000
+ulimit -Sl 200000
+
 export PATH="/usr/local/sbin:$PATH"
 PATH="/usr/local/bin:$PATH"
 PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
@@ -39,3 +42,6 @@ source "$HOME/.cargo/env"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(zoxide init zsh)"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform
