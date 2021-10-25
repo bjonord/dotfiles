@@ -1,0 +1,1 @@
+alias cursorvisible="tput cnorm"
