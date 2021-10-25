@@ -12,16 +12,14 @@ alias 'gfor=git feorigin'
 alias 'gco-=gco -'
 
 function grepco {
-    git branch | grep $1 | head -n1 | awk '{print $1}' | xargs git checkout
+  git branch | grep $1 | head -n1 | awk '{print $1}' | xargs git checkout
 }
 
 function fgco {
  if [ -z $1 ]; then
    git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git checkout
- elif [ $1=="-" ]; then
-   git checkout -
- elif [ $1=="m" ]; then
-   git mainco
+ else
+   git checkout $*
  fi
 }
 
