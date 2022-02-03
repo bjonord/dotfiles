@@ -34,6 +34,7 @@ PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH})
 
 autoload bashcompinit
 bashcompinit
+fpath=($fpath ~/.zsh/completion)
 
 #export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 

@@ -6,7 +6,17 @@
 	template = ~/.gitconfig-message
 
 [color]
-	ui = false
+  diff = auto
+  status = auto
+  interactive = auto
+	ui = true
+  pager = true
+
+[color "branch"]
+  local = yellow
+  current = brightwhite yellow
+  remote = normal green
+  upstream = brightwhite cyan
 
 [alias]
 	oneline = log --pretty=oneline
@@ -28,7 +38,7 @@
 # other aliases)
 	branch-name = "!git rev-parse --abbrev-ref HEAD"
 # Get default branch
-	default-branch = "!git branch | grep -oE 'main|master'"
+	default-branch = "!git branch | grep -oE ' main| master'"
 	mainco = "!git co $(git default-branch)"
 	mainpo = "!git pull origin $(git default-branch)"
 	rebma = "!git rebase $(git default-branch)"

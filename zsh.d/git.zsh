@@ -10,6 +10,8 @@ alias 'gpom=git mainpo'
 alias 'grem=git rebma'
 alias 'gfor=git feorigin'
 alias 'gco-=gco -'
+alias 'gcam=gc --amend'
+alias 'gcae=gc --amend --no-edit'
 
 function grepco {
   git branch | grep $1 | head -n1 | awk '{print $1}' | xargs git checkout
@@ -17,7 +19,7 @@ function grepco {
 
 function fgco {
  if [ -z $1 ]; then
-   git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git checkout
+   git for-each-ref --format='%(refname:short)' refs/heads | fzf --ansi | xargs git checkout
  else
    git checkout $*
  fi
