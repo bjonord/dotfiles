@@ -8,3 +8,9 @@ scala.zsh
 sbt.zsh
 .tern-port
 locals/
+.config/gh/hosts.yml
+.config/zed/.tmp*
+.config/zed/embeddings
+.config/zed/prompts
+.config/cb/api.crunchybridge.com
+.config/cb/certs/*

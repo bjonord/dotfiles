@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ollama run mistral "write a Pull request description with a title and summary in markdown, don't reference commit shas and don't include the commit shas, Author and Date: $1" 

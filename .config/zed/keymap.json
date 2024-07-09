@@ -1,0 +1,9 @@
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      "shift-ctrl-cmd-t": ["task::Spawn", { "task_name": "Run Rspec - File" }],
+      "shift-ctrl-cmd-l": ["task::Spawn", { "task_name": "Run Rspec - Line" }]
+    }
+  }
+]

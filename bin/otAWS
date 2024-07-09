@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ykman oath accounts code "Amazon Web Services" -s | pbcopy

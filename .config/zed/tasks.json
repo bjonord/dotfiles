@@ -1,0 +1,16 @@
+[
+  {
+    "label": "Run Rspec - File",
+    "command": "bundle exec rspec $ZED_RELATIVE_FILE",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  },
+  {
+    "label": "Run Rspec - Line",
+    "command": "bundle exec rspec $ZED_RELATIVE_FILE:$ZED_ROW",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  }
+]

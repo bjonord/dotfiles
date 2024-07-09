@@ -8,7 +8,7 @@ alias ec3="find . -name '#*#' -delete"
 alias ll='ls -l'
 alias la='ls -a'
 alias lal='ls -ahl'
-alias exal="exa -ahl"
+alias ezal="eza -ahl"
 
 # SSH perform remote command
 alias ssh-remote-attached-bjoska="ssh -t "

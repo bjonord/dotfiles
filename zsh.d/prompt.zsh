@@ -32,7 +32,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd'
 
 # Colors for ls
-# Make sure to install exa instead see rust-nix-util-alias.zsh.
+# Make sure to install eza instead see rust-nix-util-alias.zsh.
 
 # Reports CPU usage for processes taking longer than 10 seconds to execute.
 REPORTTIME=10

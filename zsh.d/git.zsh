@@ -41,3 +41,7 @@ alias 'fgcob=git branch | fpp -nfc -ai -c gco'
 alias 'fgap=gstat | fpp -c gap'
 alias 'fdiff=gstat | fpp -c gdiff'
 alias 'frspec=gstat | fpp -c rspec'
+# Doesn't work yet...
+alias 'open-deleted=git rev-list -n 1 HEAD -- $1 | echo "$(xargs gh browse -n)" | xargs sed "s/master|main\///g" | xargs echo'
+  
+

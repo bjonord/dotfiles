@@ -63,7 +63,6 @@
 
 
 [core]
-	editor = lvim
 	attributesfile = ~/.gitattributes
 	excludesFile = ~/.gitignore
 	pager = diff-so-fancy | less --tabs=4 -RFX
