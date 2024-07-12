@@ -7,14 +7,25 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "theme": "Github Dark",
+  "theme": "Solarized Light",
+
+  "buffer_font_family": "Menlo",
+  "buffer_font_size": 17,
+  "buffer_line_height": "comfortable",
+  "ui_font_family": "Menlo",
+  "ui_font_size": 17,
+  "ui_font_weight": 200,
+
   "telemetry": {
     "diagnostics": false,
     "metrics": false
   },
+  "terminal": {
+    "env": {
+      "GIT_EDITOR": "zed --wait"
+    }
+  },
   "vim_mode": true,
-  "ui_font_size": 16,
-  "buffer_font_size": 16,
 
   "languages": {
     "Ruby": {
